@@ -1,5 +1,6 @@
 from datetime import datetime, timedelta, timezone
-from jose import jwt, JWTError
+from jose import jwt, JWTError, ExpiredSignatureError
+from app.core.exceptions import InvalidTokenError, TokenExpiredError
 from passlib.context import CryptContext
 from app.core.config import settings
 
@@ -43,5 +44,8 @@ def decode_token(token: str) -> dict:
         )
         return payload
 
+    except ExpiredSignatureError:
+        raise TokenExpiredError()
+
     except JWTError:
-        raise ValueError("Invalid or expired token")
+        raise InvalidTokenError()
