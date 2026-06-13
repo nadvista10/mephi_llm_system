@@ -1,6 +1,6 @@
 from contextlib import asynccontextmanager
 from fastapi import FastAPI
-from app.api.router import router
+from app.api.router import api_router as router
 from app.core.config import settings
 
 
