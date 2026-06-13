@@ -1,5 +1,4 @@
 from jose import jwt, JWTError, ExpiredSignatureError
-
 from app.core.config import settings
 
 
