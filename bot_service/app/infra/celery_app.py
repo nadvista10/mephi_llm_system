@@ -1,5 +1,4 @@
-from celery import Celery
-
+from bot_service.app.infra.celery_app import Celery
 from app.core.config import settings
 
 
