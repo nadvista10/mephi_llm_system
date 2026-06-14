@@ -28,10 +28,11 @@ pytest -q
 - Важно: не забудьте определить `JWT_SECRET`, `REDIS_URL`, `RABBITMQ_URL`, `TELEGRAM_BOT_TOKEN`, `OPENROUTER_API_KEY`.
 
 Скриншоты
-- **RabbitMQ:** [RabbitMQ](screenshots/Rabbit.png)
-- **Чат бот:** [Чат](screenshots/Chat.png)
-- **Тесты бота:** [Bot Tests](screenshots/Bot%20Tests.png)
-- **Тесты auth_service:** [Auth Tests](screenshots/Auth%20Tests.png)
-- **Регистрация:** [Register](screenshots/Register.png)
-- **Логин:** [Login](screenshots/Login.png)
-- **Информация о пользователе (me):** [Me](screenshots/Me.png)
+
+- **RabbitMQ (граф очереди):** [![RabbitMQ](screenshots/Rabbit.png)](screenshots/Rabbit.png)
+- **Чат бота:** [![Чат](screenshots/Chat.png)](screenshots/Chat.png)
+- **Тесты бота:** [![Bot Tests](screenshots/Bot%20Tests.png)](screenshots/Bot%20Tests.png)
+- **Тесты auth_service:** [![Auth Tests](screenshots/Auth%20Tests.png)](screenshots/Auth%20Tests.png)
+- **Регистрация:** [![Register](screenshots/Register.png)](screenshots/Register.png)
+- **Логин:** [![Login](screenshots/Login.png)](screenshots/Login.png)
+- **Информация о пользователе (me):** [![Me](screenshots/Me.png)](screenshots/Me.png)
