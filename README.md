@@ -26,3 +26,12 @@ pytest -q
 Переменные окружения
 - Каждая служба читает переменные окружения.
 - Важно: не забудьте определить `JWT_SECRET`, `REDIS_URL`, `RABBITMQ_URL`, `TELEGRAM_BOT_TOKEN`, `OPENROUTER_API_KEY`.
+
+Скриншоты
+- **RabbitMQ:** [RabbitMQ](screenshots/Rabbit.png)
+- **Чат бот:** [Чат](screenshots/Chat.png)
+- **Тесты бота:** [Bot Tests](screenshots/Bot%20Tests.png)
+- **Тесты auth_service:** [Auth Tests](screenshots/Auth%20Tests.png)
+- **Регистрация:** [Register](screenshots/Register.png)
+- **Логин:** [Login](screenshots/Login.png)
+- **Информация о пользователе (me):** [Me](screenshots/Me.png)
