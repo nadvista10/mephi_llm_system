@@ -1,3 +1,5 @@
+import asyncio
+
 from celery import shared_task
 import httpx
 from app.core.config import settings
@@ -7,7 +9,7 @@ from app.services.openrouter_client import chat_completion, OpenRouterError
 @shared_task(name="llm_request")
 def llm_request(tg_chat_id: int, prompt: str):
     try:
-        answer = chat_completion(prompt)
+        answer = asyncio.run(chat_completion(prompt))
 
         # send to telegram
         httpx.post(

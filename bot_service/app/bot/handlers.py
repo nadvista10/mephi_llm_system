@@ -1,9 +1,11 @@
+import traceback
 from aiogram import Router, types
 from aiogram.filters import Command
 from app.infra.redis import get_redis
 from app.core.jwt import decode_and_validate
 from app.tasks.llm_tasks import llm_request
-
+import asyncio
+from kombu.exceptions import OperationalError
 
 router = Router()
 
@@ -68,6 +70,13 @@ async def handle_message(message: types.Message):
         )
         return
 
-    llm_request.delay(user_id, text)
+    try:
+        llm_request.delay(user_id, text)
+    except Exception as exc:
+        traceback.print_exc()
+        await message.answer(
+                "Сервис очередей недоступен — попробуйте позже."
+            )
+        return
 
     await message.answer("Запрос принят, обрабатываю...")

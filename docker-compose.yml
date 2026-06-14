@@ -1,0 +1,57 @@
+version: "3.8"
+
+services:
+  redis:
+    image: redis:7
+    ports:
+      - "6379:6379"
+
+  rabbitmq:
+    image: rabbitmq:3.13-management
+    container_name: rabbitmq
+    ports:
+      - "5672:5672"    # AMQP
+      - "15672:15672"  # Web UI
+    environment:
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_PASS: guest
+    healthcheck:
+      test: ["CMD", "rabbitmq-diagnostics", "ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 10 
+
+  auth:
+    build: ./auth_service
+    ports:
+      - "8000:8000"
+    volumes:
+      - data:/data
+    env_file:
+      - ./auth_service/.env
+
+  bot:
+    build: ./bot_service
+    ports:
+      - "8001:8000"
+    depends_on:
+      redis:
+        condition: service_started
+      rabbitmq:
+        condition: service_healthy
+    env_file:
+      - ./bot_service/.env
+
+  worker:
+    build: ./bot_service
+    command: ["celery", "-A", "app.infra.celery_app.celery_app", "worker", "--loglevel=info"]
+    depends_on:
+      redis:
+        condition: service_started
+      rabbitmq:
+        condition: service_healthy
+    env_file:
+      - ./bot_service/.env
+
+volumes:
+  data:
