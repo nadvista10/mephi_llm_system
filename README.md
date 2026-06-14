@@ -29,10 +29,10 @@ pytest -q
 
 Скриншоты
 
-- **RabbitMQ (граф очереди):** [![RabbitMQ](screenshots/Rabbit.png)](screenshots/Rabbit.png)
-- **Чат бота:** [![Чат](screenshots/Chat.png)](screenshots/Chat.png)
-- **Тесты бота:** [![Bot Tests](screenshots/Bot%20Tests.png)](screenshots/Bot%20Tests.png)
-- **Тесты auth_service:** [![Auth Tests](screenshots/Auth%20Tests.png)](screenshots/Auth%20Tests.png)
-- **Регистрация:** [![Register](screenshots/Register.png)](screenshots/Register.png)
-- **Логин:** [![Login](screenshots/Login.png)](screenshots/Login.png)
-- **Информация о пользователе (me):** [![Me](screenshots/Me.png)](screenshots/Me.png)
+- **RabbitMQ (граф очереди):** [![RabbitMQ](Screenshots/Rabbit.png)](Screenshots/Rabbit.png)
+- **Чат бота:** [![Чат](Screenshots/Chat.png)](Screenshots/Chat.png)
+- **Тесты бота:** [![Bot Tests](Screenshots/Bot%20Tests.png)](Screenshots/Bot%20Tests.png)
+- **Тесты auth_service:** [![Auth Tests](Screenshots/Auth%20Tests.png)](Screenshots/Auth%20Tests.png)
+- **Регистрация:** [![Register](Screenshots/Register.png)](Screenshots/Register.png)
+- **Логин:** [![Login](Screenshots/Login.png)](Screenshots/Login.png)
+- **Информация о пользователе (me):** [![Me](Screenshots/Me.png)](Screenshots/Me.png)
