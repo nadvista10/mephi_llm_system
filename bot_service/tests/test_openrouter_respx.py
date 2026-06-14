@@ -1,7 +1,6 @@
 import pytest
 import respx
 from httpx import Response
-
 from app.services.openrouter_client import chat_completion
 from app.core.config import settings
 

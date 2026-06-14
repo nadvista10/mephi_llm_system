@@ -4,6 +4,7 @@ import logging
 from app.infra.celery_app import celery_app
 from app.bot.dispatcher import dp, bot
 
+
 app = FastAPI(title="Bot Service")
 
 

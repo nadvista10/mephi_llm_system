@@ -6,7 +6,6 @@ from app.db import base
 from app.db.session import engine
 
 
-
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     print("Auth Service started")

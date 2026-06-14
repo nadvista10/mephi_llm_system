@@ -34,7 +34,6 @@ async def chat_completion(prompt: str, timeout: int = 60) -> str:
             response.raise_for_status()
             data = response.json()
             
-            # Извлекаем текст ответа
             return data["choices"][0]["message"]["content"]
             
         except httpx.TimeoutException:

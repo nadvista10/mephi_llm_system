@@ -7,6 +7,7 @@ from app.tasks.llm_tasks import llm_request
 import asyncio
 from kombu.exceptions import OperationalError
 
+
 router = Router()
 
 
